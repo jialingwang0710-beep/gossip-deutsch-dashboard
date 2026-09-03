@@ -50,18 +50,17 @@
   .tab.active { box-shadow:0 3px 8px rgba(117,148,139,.18); }
   .resultline { display:flex; justify-content:space-between; align-items:center; gap:16px; margin:0 0 15px; color:var(--muted); font-size:13px; }
   .resultline strong { color:var(--ink); }
-  .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
-  .card { position:relative; display:flex; flex-direction:column; min-height:258px; padding:19px 19px 18px; border:1px solid rgba(255,255,255,.9); border-radius:17px; background:rgba(255,253,248,.98); overflow:hidden; box-shadow:0 8px 20px rgba(73,101,100,.09); transition:transform .18s ease,box-shadow .18s ease; }
+  .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+  .card { position:relative; display:flex; flex-direction:column; min-height:194px; padding:16px 16px 15px; border:1px solid rgba(255,255,255,.9); border-radius:17px; background:rgba(255,253,248,.98); overflow:hidden; box-shadow:0 8px 20px rgba(73,101,100,.09); transition:transform .18s ease,box-shadow .18s ease; }
   .card::before { content:""; position:absolute; top:0; left:0; height:6px; width:100%; background:var(--category); }
   .card::after { content:""; position:absolute; right:-20px; bottom:-22px; width:78px; height:78px; border-radius:50%; background:var(--category); opacity:.08; }
   .card:hover { transform:translateY(-4px); box-shadow:0 15px 30px rgba(73,101,100,.17); border-color:#C8D8D5; }
   .meta { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:5px; color:var(--muted); font:11px ui-monospace,SFMono-Regular,Consolas,monospace; }
   .badge { display:inline-block; max-width:70%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--category); font-weight:700; }
   .status { padding:3px 6px; border:1px solid var(--line); color:#5b5751; }
-  .hook { position:relative; z-index:1; margin:22px 0 13px; font:700 21px/1.39 "PingFang SC","Microsoft YaHei",sans-serif; letter-spacing:-.03em; }
-  .grammar { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; color:#5f5b55; font-size:12px; line-height:1.6; }
-  .footer { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:auto; padding-top:18px; }
-  .performance { position:relative; z-index:1; font-size:12px; color:var(--muted); } .performance b { color:var(--ink); font:700 21px Georgia,serif; }
+  .hook { position:relative; z-index:1; margin:18px 0 10px; font:700 18px/1.42 "PingFang SC","Microsoft YaHei",sans-serif; letter-spacing:-.03em; }
+  .footer { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:auto; padding-top:12px; }
+  .performance { position:relative; z-index:1; font-size:11px; color:var(--muted); } .performance b { color:var(--ink); font:700 19px Georgia,serif; }
   .open { position:relative; z-index:1; color:var(--blue); text-decoration:none; font-size:12px; font-weight:700; } .open:hover { text-decoration:underline; }
   .empty { grid-column:1/-1; padding:46px 15px; color:var(--muted); text-align:center; border:1px dashed var(--line); }
   dialog { width:min(720px,calc(100vw - 32px)); border:1px solid rgba(255,255,255,.95); border-top:6px solid var(--clay); border-radius:20px; padding:0; background:var(--card); color:var(--ink); box-shadow:0 22px 48px rgba(31,48,47,.25); }
@@ -70,6 +69,7 @@
   .detail { padding:16px 0; border-top:1px solid var(--line); } .detail label { display:block; margin-bottom:7px; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.1em; } .detail p { margin:0; line-height:1.7; }
   .caption-trigger,.caption-copy { padding:8px 10px; color:#55706A; border:1px solid #C4D3C8; border-radius:9px; background:#EDF3EF; cursor:pointer; font:700 12px "PingFang SC","Microsoft YaHei",sans-serif; } .caption-trigger:hover,.caption-copy:hover { background:#E2ECE9; border-color:var(--blue); } .caption-trigger:disabled { color:var(--muted); border-color:var(--line); background:#F4F1EA; cursor:not-allowed; }
   .caption-view { margin-top:11px; padding:12px; border:1px solid #D8DED5; border-radius:12px; background:#FAF9F4; } .caption-actions { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px; } .caption-actions span { color:var(--muted); font-size:11px; } .caption-content { max-height:420px; margin:0; overflow:auto; color:#394945; font:13px/1.75 "PingFang SC","Microsoft YaHei",sans-serif; white-space:pre-wrap; word-break:break-word; }
+  @media (max-width:1240px) { .grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
   @media (max-width:1040px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .toolbar { grid-template-columns:1fr 1fr; } .overview { grid-template-columns:1fr; } }
   @media (max-width:680px) { .shell { padding:16px 14px 50px; } .masthead { align-items:flex-start; flex-direction:column; padding:25px 22px; } .masthead::after { display:none; } .stats { grid-template-columns:repeat(2,1fr); width:100%; margin:0 0 24px; } .grid { grid-template-columns:1fr; } .toolbar { grid-template-columns:1fr; } .subtitle { max-width:none; } .visual-distribution { grid-template-columns:1fr; } .pie-wrap { border-left:0; border-top:1px solid var(--line); padding:16px 0 0; } .voice-topic-area { grid-template-columns:1fr; } }
 </style>
@@ -97,7 +97,7 @@
     </div>
     <div id="tabs" class="tabs"></div>
   </section>
-  <div class="resultline"><span id="resultCount"></span><span>点击卡片看详情 · <strong>打开文件夹</strong>可直达素材</span></div>
+  <div class="resultline"><span id="resultCount"></span><span>点击卡片查看语法、文案与制作状态</span></div>
   <section id="grid" class="grid" aria-live="polite"></section>
 </main>
 <dialog id="detailDialog"><div class="dialog-body"><button class="dialog-close" id="closeDialog" aria-label="关闭">×</button><div id="detailContent"></div></div></dialog>
@@ -173,9 +173,9 @@ function card(t) {
   const performance = t.total != null ? `<div class="performance"><b>${t.total}</b> 互动　赞 ${t.likes} · 藏 ${t.saves} · 评 ${t.comments}</div>` : `<div class="performance">${esc(t.raw_status)}</div>`;
   return `<article class="card" style="--category:${color(t.category)}" data-folder="${esc(t.folder)}">
     <div class="meta"><span class="badge">${esc(t.category)}</span><span>${esc(t.date)}</span></div>
-    <div class="meta"><span class="status">${esc(t.status)}</span><span>${esc(t.slug)}</span></div>
-    <h2 class="hook">${esc(t.hook)}</h2><p class="grammar">${esc(t.grammar)}</p>
-    <div class="footer">${performance}<a class="open" href="${esc(t.href)}" title="打开 ${esc(t.folder)}">打开文件夹 ↗</a></div>
+    <div class="meta"><span class="status">${esc(t.status)}</span></div>
+    <h2 class="hook">${esc(t.hook)}</h2>
+    <div class="footer">${performance}</div>
   </article>`;
 }
 function render() {
