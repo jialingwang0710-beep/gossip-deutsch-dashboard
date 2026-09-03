@@ -12,7 +12,7 @@
   button,input,select { font:inherit }
   .shell { max-width:1660px; margin:0 auto; padding:30px 34px 84px; }
   .masthead { display:flex; align-items:stretch; justify-content:space-between; gap:28px; padding:34px 38px 31px; color:var(--ink); background:rgba(255,253,248,.94); border:1px solid rgba(255,255,255,.85); border-left:7px solid var(--moss); border-radius:28px; box-shadow:0 18px 38px var(--shadow); }
-  .masthead::after { content:""; flex:0 0 105px; align-self:stretch; border:1px solid #D6E0DF; border-radius:18px; background:repeating-linear-gradient(135deg,#D6E2E2 0 1px,#F4F6F3 1px 9px); }
+  .masthead-avatar { flex:none; width:116px; height:116px; align-self:center; object-fit:cover; border:5px solid rgba(255,255,255,.78); border-radius:50%; background:#F5F1E8; box-shadow:0 9px 20px rgba(73,101,100,.16); }
   .eyebrow { margin:0 0 10px; font:700 11px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.16em; color:#B98673; }
   h1 { margin:0; font-family:Georgia,"Songti SC","SimSun",serif; font-size:clamp(42px,5vw,74px); letter-spacing:-.06em; line-height:.94; }
   .subtitle { align-self:flex-end; max-width:390px; margin:0; color:var(--muted); font-size:13px; line-height:1.75; } .subtitle code { color:#B98673; }
@@ -71,12 +71,12 @@
   .caption-view { margin-top:11px; padding:12px; border:1px solid #D8DED5; border-radius:12px; background:#FAF9F4; } .caption-actions { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px; } .caption-actions span { color:var(--muted); font-size:11px; } .caption-content { max-height:420px; margin:0; overflow:auto; color:#394945; font:13px/1.75 "PingFang SC","Microsoft YaHei",sans-serif; white-space:pre-wrap; word-break:break-word; }
   @media (max-width:1240px) { .grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
   @media (max-width:1040px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .toolbar { grid-template-columns:1fr 1fr; } .overview { grid-template-columns:1fr; } }
-  @media (max-width:680px) { .shell { padding:16px 14px 50px; } .masthead { align-items:flex-start; flex-direction:column; padding:25px 22px; } .masthead::after { display:none; } .stats { grid-template-columns:repeat(2,1fr); width:100%; margin:0 0 24px; } .grid { grid-template-columns:1fr; } .toolbar { grid-template-columns:1fr; } .subtitle { max-width:none; } .visual-distribution { grid-template-columns:1fr; } .pie-wrap { border-left:0; border-top:1px solid var(--line); padding:16px 0 0; } .voice-topic-area { grid-template-columns:1fr; } }
+  @media (max-width:680px) { .shell { padding:16px 14px 50px; } .masthead { align-items:flex-start; flex-direction:column; padding:25px 22px; } .masthead-avatar { width:86px; height:86px; align-self:flex-start; } .stats { grid-template-columns:repeat(2,1fr); width:100%; margin:0 0 24px; } .grid { grid-template-columns:1fr; } .toolbar { grid-template-columns:1fr; } .subtitle { max-width:none; } .visual-distribution { grid-template-columns:1fr; } .pie-wrap { border-left:0; border-top:1px solid var(--line); padding:16px 0 0; } .voice-topic-area { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 <main class="shell">
-  <header class="masthead"><div><p class="eyebrow">GOSSIP DEUTSCH · TOPIC ARCHIVE</p><h1>选题看板</h1></div><p class="subtitle">按合集、制作状态、语法与互动表现检索。小红书发布状态由最新公开笔记记录核对；本页更新于 2026-09-03。</p></header>
+  <header class="masthead"><div><p class="eyebrow">GOSSIP DEUTSCH · TOPIC ARCHIVE</p><h1>八卦德语</h1></div><p class="subtitle">按合集、制作状态、语法与互动表现检索。小红书发布状态由最新公开笔记记录核对；本页更新于 2026-09-03。</p><img class="masthead-avatar" src="avatar.png" alt="八卦德语头像" /></header>
   <section class="stats" aria-label="看板概览">
     <div class="stat"><b>47</b><span>已归档选题</span></div>
     <div class="stat"><b>8</b><span>内容合集</span></div>
